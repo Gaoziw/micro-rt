@@ -1,0 +1,29 @@
+###############################################
+# 用途： 修改代码总是伴随着引入新的构建
+#        这个脚本用于更新docker，而不是从头构建 (推荐)
+# 使用命令：podman build -f Dockerfile.update -t sel4-build-env:updated .
+# 注意： 需要先有 sel4-build-env:latest 镜像
+#       后面的 sel4-build-env:updated 可以自定义
+###############################################
+
+# # 基于已有的 sel4-build-env 镜像（可通过 podman imgaes 得到名称）
+# FROM sel4-build-env:latest
+
+# # 切换到 root 用户以安装软件包
+# USER root
+
+# # 更新系统并安装新的依赖包的示例
+# RUN apt-get update && apt-get install -y --no-install-recommends \
+#     python3-dev \
+#     python3-pip \
+#     && apt-get clean autoclean \
+#     && apt-get autoremove --yes \
+#     && rm -rf /var/lib/{apt,dpkg,cache,log}/
+
+# # 安装 Python 包的示例
+# RUN pip install pyfdt \
+#     && pip install jsonschema \
+
+# # 设置工作目录为 /workspace，我们稍后会在这里挂载我们的代码
+# VOLUME /workspace
+# WORKDIR /workspace
