@@ -14,6 +14,7 @@
     ```bash
     sudo apt install podman git
     ```
+
 ## 拉取 micro-rt 仓库
     ```bash
     git clone https://github.com/Gaoziw/micro-rt.git

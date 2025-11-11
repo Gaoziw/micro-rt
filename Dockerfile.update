@@ -1,5 +1,5 @@
 ###############################################
-# 用途： 修改代码总是伴随着引入新的构建
+# 用途： 修改代码总是伴随着引入新的构建依赖
 #        这个脚本用于更新docker，而不是从头构建 (推荐)
 # 使用命令：podman build -f Dockerfile.update -t sel4-build-env:updated .
 # 注意： 需要先有 sel4-build-env:latest 镜像
@@ -7,7 +7,7 @@
 ###############################################
 
 # # 基于已有的 sel4-build-env 镜像（可通过 podman imgaes 得到名称）
-# FROM sel4-build-env:latest
+FROM sel4-build-env:latest
 
 # # 切换到 root 用户以安装软件包
 # USER root
@@ -27,3 +27,5 @@
 # # 设置工作目录为 /workspace，我们稍后会在这里挂载我们的代码
 # VOLUME /workspace
 # WORKDIR /workspace
+RUN curl -o /usr/local/bin/repo https://mirrors.tuna.tsinghua.edu.cn/git/git-repo && \
+    chmod a+x /usr/local/bin/repo

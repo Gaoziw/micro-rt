@@ -17,6 +17,7 @@ RUN apt-get update && \
     ncurses-dev \
     curl \
     git \
+    ssh \
     doxygen \
     device-tree-compiler \
     xxd \
@@ -69,13 +70,18 @@ RUN apt-get update && \
     && apt-get autoremove --yes \
     && rm -rf /var/lib/{apt,dpkg,cache,log}/
 
-    # 安装 Python 包
+# 安装 Python 包
 RUN pip install pyfdt \
     && pip install jsonschema \
     && pip install ply \
     && pip install libarchive-c \
     && pip install pyelftools
     && pip3 install --user setuptools sel4-deps
+
+# 安装 repo 工具
+# 安装 repo 工具（推荐写法）
+RUN curl -o /usr/local/bin/repo https://mirrors.tuna.tsinghua.edu.cn/git/git-repo && \
+    chmod a+x /usr/local/bin/repo
 
 ###############################################
 # 方法A：安装预编译的 RISC-V GNU 工具链 (推荐)
