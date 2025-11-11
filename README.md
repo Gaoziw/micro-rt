@@ -12,7 +12,7 @@
 
 ## 安装工具
     ```bash
-    sudo apt install podman
+    sudo apt install podman git
     ```
 
 ## micro-rt 使用podman对所有管理编译环境，在虚拟环境中实现代码拉取，构建，测试
