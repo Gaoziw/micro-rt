@@ -14,6 +14,10 @@
     ```bash
     sudo apt install podman git
     ```
+## 拉取 micro-rt 仓库
+    ```bash
+    git clone https://github.com/Gaoziw/micro-rt.git
+    ```
 
 ## micro-rt 使用podman对所有管理编译环境，在虚拟环境中实现代码拉取，构建，测试
     ```bash
