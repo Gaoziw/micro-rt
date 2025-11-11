@@ -17,7 +17,7 @@
 
 ## micro-rt 使用podman对所有管理编译环境，在虚拟环境中实现代码拉取，构建，测试
     ```bash
-    docker build -t sel4-build-env .
+    podman build -t sel4-build-env .
     # 如果网络不好也可以拉取已经构建完成的images
 
     ```
