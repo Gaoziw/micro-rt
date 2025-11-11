@@ -1,0 +1,25 @@
+# 构建输出目录
+build/
+build-*/
+
+# 系统或编辑器文件
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 二进制文件
+*.o
+*.a
+*.so
+*.elf
+*.img
+
+# 日志文件
+*.log
+
+# 依赖目录
+.cache/
+.venv/
+__pycache__/

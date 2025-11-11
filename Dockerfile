@@ -70,7 +70,12 @@ RUN apt-get update && \
     && rm -rf /var/lib/{apt,dpkg,cache,log}/
 
     # 安装 Python 包
-RUN pip3 install --user setuptools sel4-deps
+RUN pip install pyfdt \
+    && pip install jsonschema \
+    && pip install ply \
+    && pip install libarchive-c \
+    && pip install pyelftools
+    && pip3 install --user setuptools sel4-deps
 
 ###############################################
 # 方法A：安装预编译的 RISC-V GNU 工具链 (推荐)
