@@ -28,12 +28,14 @@
 
 ## 运行虚拟环境
     ```bash
+    chmod a+x run_env.sh
     ./run_env.sh
     ```
 
 ## 拉取 sel4 kernel 源码
     ```bash
-    ./PullCode.sh
+    chmod a+x pull_code.sh
+    ./pull_code.sh
     ```
 
 # 手动构建kernel，运行测试集
